@@ -11,5 +11,8 @@ jobs:
     runs-on: windows-2019 
     steps:
     - uses: actions/checkout@v1
+    
+    - uses: actions/upload-artifact@master
       with:
-        ref: master
+        name: my-artifact
+        path: dev.txt
