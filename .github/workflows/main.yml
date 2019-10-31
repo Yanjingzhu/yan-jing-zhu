@@ -3,18 +3,21 @@
 name : test pr
 on:
    pull_request:
+      types: [locked synchronize, reopened]
       branches:
          - master
+           
 
 jobs:
   build:
-    runs-on: windows-2019 
+    runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@v1
       with:
         ref: master
-     
-    - uses: actions/upload-artifact@master
-      with:
-        name: my-artifact
-        path: dev.txt
+    - name: output event name
+      run:  echo ${{github.event_name}}
+    #- uses: actions/upload-artifact@master
+      #with:
+        #name: my-artifact
+        #path: dev.txt
