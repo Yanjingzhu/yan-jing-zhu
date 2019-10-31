@@ -16,6 +16,10 @@ jobs:
         ref: master
     - name: output event name
       run:  echo ${{github.event_name}}
+    - name: Dump GitHub Event
+      env:
+          GITHUB_EVENT: ${{ toJson(github.event) }}
+      run: echo "$GITHUB_EVENT"
     #- uses: actions/upload-artifact@master
       #with:
         #name: my-artifact
