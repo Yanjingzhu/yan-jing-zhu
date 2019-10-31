@@ -3,10 +3,9 @@
 name : test pr
 on:
    pull_request:
-      types: [locked, synchronize, reopened, edited, review_requested, review_request_removed, opened]
+      types: [locked, synchronize, reopened, edited, review_requested, review_request_removed, opened, ready_for_review]
       branches:
          - master
-           
 
 jobs:
   build:
