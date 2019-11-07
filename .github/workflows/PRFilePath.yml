@@ -1,9 +1,5 @@
-name : test different path on PR trigger 
-on: 
-  pull_request:
-    paths:
-      - '!dir2/**'
-      - 'dir1/**'
+name : checkout branch
+on: push
 
 jobs:
   job1:
