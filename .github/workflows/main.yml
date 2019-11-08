@@ -5,16 +5,22 @@ on:
    pull_request:
       types: [locked, synchronize, reopened, edited, review_requested, review_request_removed, opened, ready_for_review]
       branches:
-         - dev
+         - master
 
 jobs:
   build:
     runs-on: ubuntu-16.04
     steps:
-    - uses: actions/checkout@v1
+    - name: GitHub Script
+      uses: actions/github-script@0.1.0
       with:
-        ref: master
-
+          github-token: ${{github.token}}
+          script: |
+            github.issues.createComment({...context.issue, body: '👋 Thanks for reporting!'})
+    #- uses: actions/checkout@v1
+    #  with:
+    #    ref: master
+    
     - name: output event name
       run:  echo ${{github.event_name}}
     - name: Dump GitHub Event
