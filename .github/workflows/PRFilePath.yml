@@ -1,5 +1,5 @@
 name : checkout branch
-on: registry_package
+on: push
 
 jobs:
   job1:
