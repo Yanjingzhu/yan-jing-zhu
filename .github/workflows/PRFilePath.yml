@@ -10,9 +10,12 @@ jobs:
     steps:
 
     - uses: actions/checkout@master
-    - name: Clean temp directory
-      run: rm -rf *
+    - name: dir2 directory
+      run: ls -R 
       working-directory: ./dir2
+    - name: dir1 directory
+      run: ls -R 
+      working-directory: ./dir1
   
 
       
