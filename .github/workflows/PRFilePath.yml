@@ -16,7 +16,7 @@ jobs:
       run: |
           ls -R
           echo $working-directory 
-      working-directory: ${{working-directory}}
+      working-directory: ${{env.working-directory}}
   
 
       
