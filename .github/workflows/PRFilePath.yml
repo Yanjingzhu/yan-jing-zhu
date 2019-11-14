@@ -12,6 +12,7 @@ jobs:
     - uses: actions/checkout@master
     - name: dir2 directory
       run: ls -R 
+      working-directory: ${{env.working-directory}}
     - name: dir1 directory
       run: |
           ls -R
