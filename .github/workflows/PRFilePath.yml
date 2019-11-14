@@ -14,7 +14,7 @@ jobs:
       run: ls -R 
     - name: dir1 directory
       run: ls -R 
-      #working-directory: ./dir1
+      working-directory: $working-directory
   
 
       
