@@ -1,4 +1,4 @@
-name : checkout branch
+name : use same working directory
 on: push
 
 jobs:
