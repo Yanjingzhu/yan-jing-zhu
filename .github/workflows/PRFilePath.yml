@@ -12,6 +12,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Clean temp directory
       run: rm -rf *
+      working-directory: ./dir1
   
 
       
