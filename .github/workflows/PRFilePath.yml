@@ -13,8 +13,10 @@ jobs:
     - name: dir2 directory
       run: ls -R 
     - name: dir1 directory
-      run: ls -R 
-      working-directory: $working-directory
+      run: |
+          ls -R
+          echo $working-directory 
+      working-directory: $WORKING-DIRECTORY
   
 
       
