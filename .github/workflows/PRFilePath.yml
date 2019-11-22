@@ -1,5 +1,7 @@
 name : use same working directory
-on: push
+on: 
+ issues:
+   type: [labeled]
 
 jobs:
   job1:
