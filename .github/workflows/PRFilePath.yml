@@ -1,7 +1,7 @@
 name : use same working directory
 on: 
  issues:
-   type: [labeled]
+   types: [edited]
 
 jobs:
   job1:
