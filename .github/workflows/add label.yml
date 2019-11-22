@@ -1,6 +1,6 @@
 name: add Label
 on:
-  issues: {types: opened}
+  issues: {types: edited}
 
 jobs:
   apply-label:
