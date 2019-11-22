@@ -1,3 +1,4 @@
+name: add Label
 on:
   issues: {types: opened}
 
