@@ -1,7 +1,7 @@
 
-name: On push
+name: mysql in docker
 
-on: [ push ]
+on: check_run
 
 jobs:
   build:
