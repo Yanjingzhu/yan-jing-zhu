@@ -11,5 +11,5 @@ jobs:
         MY_VAR: SomeVal
      run: |
         sudo xcode-select -s $DEVELOPER_DIR
-        DEVELOPER_DIR=$DEVELOPER_DIR fastlane gym
+        echo $MY_VAR
         
