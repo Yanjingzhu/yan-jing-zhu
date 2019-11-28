@@ -10,6 +10,6 @@ jobs:
         DEVELOPER_DIR: /Applications/Xcode_11.2.1.app/Contents/Developer
         MY_VAR: SomeVal
      run: |
-        xcode-select -s $DEVELOPER_DIR
+        sudo xcode-select -s $DEVELOPER_DIR
         fastlane action xcode_select
         
