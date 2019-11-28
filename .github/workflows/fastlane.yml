@@ -1,0 +1,15 @@
+name: testDEVELOPER_DIR
+on: push
+
+jobs:
+ job1:
+   runs-on:macos-latest
+   steps:
+   - name: Create build via Fastlane
+     env:
+        DEVELOPER_DIR: /Applications/Xcode_11.2.1.app/Contents/Developer
+        MY_VAR: SomeVal
+     run: |
+        xcode_select("$DEVELOPER_DIR")
+        fastlane action xcode_select
+        
