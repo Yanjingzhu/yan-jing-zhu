@@ -2,8 +2,8 @@ name: testDEVELOPER_DIR
 on: push
 
 jobs:
- job1:
-   runs-on:macos-latest
+  job1:
+   runs-on: [macOS-latest]
    steps:
    - name: Create build via Fastlane
      env:
