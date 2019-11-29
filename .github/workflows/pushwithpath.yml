@@ -1,14 +1,13 @@
 
-name : push with path
+name : push with path amd tag
 
 on:
   push:
+    paths:
+      - 'dir1/**'     
     branches: 
       - master
-    paths:
-      - 'dir1/**'
     tags:
-
       - 'release-*'
 
 jobs:
