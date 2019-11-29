@@ -1,9 +1,7 @@
 
         
 name : test pr
-on:
-  issues:
-    types: [opened, edited, milestoned]
+on: release 
 
 jobs:
   build:
