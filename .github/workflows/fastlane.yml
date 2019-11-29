@@ -1,0 +1,15 @@
+name: testDEVELOPER_DIR
+on: check_run
+
+jobs:
+  job1:
+   runs-on: [macOS-latest]
+   steps:
+   - name: Create build via Fastlane
+     env:
+        DEVELOPER_DIR: /Applications/Xcode_11.2.1.app/Contents/Developer
+        MY_VAR: SomeVal
+     run: |
+        sudo xcode-select -s $DEVELOPER_DIR
+        echo $MY_VAR
+        

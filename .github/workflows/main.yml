@@ -4,10 +4,11 @@ name : test pr
 on:  
   deployment      
 
+
 jobs:
   build:
-    runs-on: windows-2019 
+    runs-on: ubuntu-16.04
     steps:
-    - uses: actions/checkout@v1
-      with:
-        ref: dev
+      - uses: actions/checkout@v1
+        with:
+           ref: dev

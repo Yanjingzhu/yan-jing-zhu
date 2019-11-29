@@ -1,0 +1,19 @@
+
+name : push with path amd tag
+
+on:
+  push:
+    paths:
+      - 'dir1/**'     
+    branches: 
+      - master
+    tags:
+      - 'release-*'
+
+jobs:
+  job1:
+    runs-on: ubuntu-16.04
+    env: 
+       working-directory: ./dir1
+    steps:
+    - uses: actions/checkout@master
