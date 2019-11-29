@@ -1,7 +1,9 @@
 
         
 name : test pr
-on: issues
+on:
+  issues:
+    types: [opened, edited, milestoned]
 
 jobs:
   build:
