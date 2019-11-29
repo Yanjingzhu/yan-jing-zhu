@@ -1,5 +1,5 @@
 name: testDEVELOPER_DIR
-on: push
+on: check_run
 
 jobs:
   job1:
