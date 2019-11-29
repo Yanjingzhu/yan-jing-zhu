@@ -1,10 +1,7 @@
 
         
 name : test pr
-on:
-   pull_request:
-      branches:
-         - master
+on: issues
 
 jobs:
   build:
@@ -12,4 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       with:
-        ref: master
+        ref: dev
