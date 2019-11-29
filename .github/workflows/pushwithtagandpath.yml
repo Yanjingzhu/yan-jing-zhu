@@ -1,10 +1,7 @@
 
 name : push with tag 
 
-on:
-  push:
-    tags:
-      - 'release-*'
+on: check_run
   
 
 
