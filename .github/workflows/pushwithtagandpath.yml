@@ -5,8 +5,8 @@ on:
   push:
     paths:
     - 'dir1/**'
-    #tags:
-   #- 'release-*'
+    tags:
+    - 'release-*'
 
 
 jobs:
