@@ -3,8 +3,10 @@ name : push with tag and path
 
 on:
   push:
+    tags:
+      - 'release-*'
     paths:
-    - 'dir1/**'
+      - 'dir1/**'
 
 
 jobs:
