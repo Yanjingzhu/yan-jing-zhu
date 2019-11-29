@@ -1,7 +1,9 @@
 
         
 name : test pr
-on: release 
+on: 
+  release:
+    types: [published]        
 
 jobs:
   build:
