@@ -1,9 +1,8 @@
 
         
 name : test pr
-on: 
-  release:
-    types: [published]        
+on:  
+  deployment      
 
 jobs:
   build:
