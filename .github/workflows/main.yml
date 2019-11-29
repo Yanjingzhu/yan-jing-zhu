@@ -1,8 +1,7 @@
 
         
 name : test pr
-on:  
-  deployment      
+on:  deployment      
 
 
 jobs:
