@@ -1,34 +1,14 @@
 
         
 name : test pr
-on:
-   pull_request:
-      types: [locked, synchronize, reopened, edited, review_requested, review_request_removed, opened, ready_for_review]
-      branches:
-         - master
+on:  
+  deployment      
+
 
 jobs:
   build:
     runs-on: ubuntu-16.04
     steps:
-    - name: GitHub Script
-      uses: actions/github-script@0.1.0
-      with:
-          github-token: ${{github.token}}
-          script: |
-            github.issues.createComment({...context.issue, body: '👋 Thanks for reporting!'})
-    #- uses: actions/checkout@v1
-    #  with:
-    #    ref: master
-    
-    - name: output event name
-      run:  echo ${{github.event_name}}
-    - name: Dump GitHub Event
-      env:
-          GITHUB_EVENT: ${{ toJson(github.event) }}
-      run: echo "$GITHUB_EVENT"
-
-    #- uses: actions/upload-artifact@master
-      #with:
-        #name: my-artifact
-        #path: dev.txt
+      - uses: actions/checkout@v1
+        with:
+           ref: dev
