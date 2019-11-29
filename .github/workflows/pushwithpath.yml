@@ -3,6 +3,8 @@ name : push with path
 
 on:
   push:
+    branches: 
+      - master
     paths:
       - 'dir1/**'
 
