@@ -1,16 +1,14 @@
 
         
-name : test pr
+name : test perl INC
 on:
    push:
 
-
 jobs:
   build:
-    runs-on: windows-2016
+    runs-on: windows-latest
     steps:
-      #- run: echo "::add-path::$Env:perl"
-        #env:
-          #perl: C:\Strawberry\perl\bin
-
+      - run: echo "::add-path::$Env:perl"
+        env:
+          perl: C:\Strawberry\perl\bin
       - run: perl -e "print qq(@INC)"
