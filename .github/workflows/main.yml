@@ -9,4 +9,8 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+      - run: echo "::add-path::$Env:perl"
+        env:
+          perl: C:\Strawberry\perl\bin
+
       - run: perl -e "print qq(@INC)"
