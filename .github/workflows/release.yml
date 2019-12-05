@@ -1,0 +1,10 @@
+name: release trigger
+on: 
+  release: 
+     types: []
+     
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions\checkout@v1
