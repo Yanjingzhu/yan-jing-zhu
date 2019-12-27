@@ -1,6 +1,6 @@
 name: release trigger
 on: 
-  push:
+  check_suite:
      
 jobs:
   job1:
