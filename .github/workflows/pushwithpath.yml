@@ -1,8 +1,8 @@
 
-name : push with path amd tag
+name : matrix build
 
 on:
-  push:
+  check_suite:
 
 
 jobs:
