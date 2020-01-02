@@ -9,6 +9,6 @@ jobs:
     steps:
     - uses: wyozi/download-gh-release-asset@master
       with: 
-        args: source code
+        args: yan-jing-zhu-2.4.zip
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
