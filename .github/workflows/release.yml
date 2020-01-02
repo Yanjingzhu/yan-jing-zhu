@@ -8,7 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: wyozi/download-gh-release-asset@master
-      with:
-        args: release_asset.dat
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
