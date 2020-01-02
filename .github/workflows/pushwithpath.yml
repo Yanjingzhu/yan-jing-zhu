@@ -14,5 +14,5 @@ jobs:
       env: 
         REF: ${{ github.ref }}
     - run: echo hello
-      if: startsWith( github.ref, 'release-' )
+      if: startsWith( github.ref, 'refs/heads/release-' )
       
