@@ -1,7 +1,7 @@
 name: download release asset
 on:
   release:
-    type: [publish]
+    type: [published]
 
 jobs:
   asset_fetcher:
