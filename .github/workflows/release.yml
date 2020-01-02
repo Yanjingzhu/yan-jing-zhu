@@ -7,9 +7,9 @@ jobs:
   asset_fetcher:
     runs-on: ubuntu-latest
     steps:
-    - run: echo $release
+    - run: echo $Release
       env: 
-        release: ${{github.event.release}} 
+        Release: ${{ github.event.release }} 
     - uses: wyozi/download-gh-release-asset@master
       with: 
         args: yan-jing-zhu-2.5.zip
