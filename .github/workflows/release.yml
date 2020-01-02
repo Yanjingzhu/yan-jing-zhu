@@ -10,7 +10,7 @@ jobs:
     steps:
     - run: echo $Release
       env: 
-        Release: ${{ github.event.release }} 
+        Release: ${{ github.event }} 
     - uses: wyozi/download-gh-release-asset@master
       with: 
         args: yan-jing-zhu-2.5.zip
