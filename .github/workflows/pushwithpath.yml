@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@master
+    - run : echo $REF
+      env: 
+        REF: ${{ github.ref }}
     - run: echo hello
       if: startsWith( github.ref, 'release-' )
       
