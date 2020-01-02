@@ -2,7 +2,7 @@
 name : push with path amd tag
 
 on:
-  push:
+  check_run:
 
 
 jobs:
