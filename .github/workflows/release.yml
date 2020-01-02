@@ -1,5 +1,7 @@
 name: download release asset
-on: push
+on: 
+  release:
+    types: [edited]
 
 jobs:
   asset_fetcher:
