@@ -1,21 +1,14 @@
-name: release trigger
-on: 
-  check_suite:
-     
+name: download release asset
+on:
+  release:
+    type: [publish]
+
 jobs:
-  job1:
-    runs-on: windows-latest
-    steps: 
-    
-      - uses: actions/checkout@master
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '3.1.100'
-      - run: Write-Host 'Hello World'
-        shell: pwsh
-      - run: Write-Host "$($PSVersionTable.PSVersion)"
-        shell: pwsh
-      - run: dotnet tool install --global PowerShell --version 7.0.0-rc.1
-      - run: Write-Host "$($PSVersionTable.PSVersion)"
-        shell: pwsh
+  asset_fetcher:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: wyozi/download-gh-release-asset@master
+      with:
+        args: release_asset.dat
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
