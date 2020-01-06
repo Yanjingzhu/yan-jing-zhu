@@ -1,8 +1,7 @@
 
 name : push with path amd tag
 
-on:
-  check_suite:
+on:  status
 
 
 jobs:
