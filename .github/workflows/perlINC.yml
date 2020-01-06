@@ -5,7 +5,7 @@ on:  push
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "::add-path::$Env:perl"
         env:
