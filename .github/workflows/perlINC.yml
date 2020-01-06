@@ -1,7 +1,7 @@
 
         
 name : test perl INC
-on:   check_run
+on:   push
 
 jobs:
   build:
