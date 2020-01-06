@@ -1,0 +1,29 @@
+
+name: mysql in docker
+
+on: check_run
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [ '12.x' ]
+        os: [ ubuntu-latest ]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      run: |
+        npm install
+    - name: Run roboter
+      run: |
+        docker run -d -p 3309:3306 -e MYSQL_ROOT_PASSWORD=wolkenkit -e MYSQL_USER=wolkenkit -e MYSQL_PASSWORD=wolkenkit -e MYSQL_DATABASE=wolkenkit --name test-mariadb mariadb:10.4.10 --bind-address=0.0.0.0
+        sleep 15
+        mysql --port=3309 --user=wolkenkit --password=wolkenkit --database=wolkenkit --verbose --execute="SELECT USER(),CURRENT_USER();" --protocol=tcp
+

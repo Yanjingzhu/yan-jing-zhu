@@ -1,0 +1,19 @@
+name: download release asset
+on:
+  release:
+    # Only use the types keyword to narrow down the activity types that will trigger your workflow.
+    types: [published, created, edited]
+
+jobs:
+  asset_fetcher:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump GitHub context
+      env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - uses: wyozi/download-gh-release-asset@master
+      with: 
+        args: yan-jing-zhu-2.5.zip
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

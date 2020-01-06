@@ -1,15 +1,24 @@
-name : test different path on PR trigger 
+name : use same working directory
 on: 
-  pull_request:
-    paths:
-      - '!dir2/**'
+ issues:
+   types: [labeled]
 
 jobs:
   job1:
     runs-on: ubuntu-16.04
+    env: 
+       working-directory: ./dir1
 
     steps:
 
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
+    - name: dir2 directory
+      run: ls -R 
+      working-directory: ${{env.working-directory}}
+    - name: dir1 directory
+      run: |
+          ls -R
+      working-directory: ${{env.working-directory}}
+  
 
       
