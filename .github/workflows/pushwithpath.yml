@@ -1,7 +1,7 @@
 name: CI
 
 on: 
-  push:
+  
   repository_dispatch:
     types: build
     
