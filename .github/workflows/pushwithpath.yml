@@ -1,14 +1,33 @@
+name: CI
 
-name : push with path amd tag
-
-on:  status
-
+on: 
+  push:
+  repository_dispatch:
+    types: build
+    
 
 jobs:
-  job1:
-    runs-on: ubuntu-16.04
+  build:
+
+    runs-on: windows-latest
+
     steps:
-    - uses: actions/checkout@master
-    - run: echo hello
-      if: startsWith( github.ref, 'release-' )
+    - uses: actions/checkout@v1
+    - name: Build
+      run: |
+        Write-Host Building Game using UE4 in $UNREAL_DIRECTORY
+        Write-Host Building in $GITHUB_WORKSPACE
+        mkdir $GITHUB_WORKSPACE\dist\
+        mkdir $GITHUB_WORKSPACE\Build\
+        "$UNREAL_DIRECTORY\Engine\Binaries\DotNET\UnrealBuildTool.exe" -projectfiles -project="$GITHUB_WORKSPACE\Landieval.uproject" -game -rocket -progress
+        "$UNREAL_DIRECTORY\Engine\Binaries\DotNET\UnrealBuildTool.exe" Landieval Development Win64 -project="$GITHUB_WORKSPACE\Landieval.uproject" -rocket -editorrecompile -progress -noubtmakefiles -NoHotReloadFromIDE -2017
+        "$UNREAL_DIRECTORY\Engine\Build\BatchFiles\RunUAT.bat" BuildCookRun -project="$GITHUB_WORKSPACE\Landieval.uproject" -noP4 -platform=Win64 -clientconfig="Development" -cook -allmaps -build -stage -pak -archive -archivedirectory="$GITHUB_WORKSPACE\dist\"
+        Compress-Archive -Path "$GITHUB_WORKSPACE\dist\" -DestinationPath "$GITHUB_WORKSPACE\Build\Build.zip"
+      env:
+        UNREAL_DIRECTORY: 'C:\Program Files\Epic Games\UE_4.24'
+    - name: Upload math result for job 2
+      uses: actions/upload-artifact@v1
+      with:
+        name: Build
+        path: $GITHUB_WORKSPACE/Build/Build.zip
       
