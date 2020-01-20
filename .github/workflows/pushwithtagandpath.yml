@@ -7,15 +7,13 @@ on: push
 
 jobs:
   job1:
-    runs-on: ubuntu-16.04
+    runs-on: windows-latest
     env: 
        working-directory: ./dir1
     steps:
     - uses: actions/checkout@master
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-       # Artifact name
-        name: drop1
-        # Directory containing files to upload
-        path: dir1
+    - run:
+         Write-Host Building Game using UE4 in ${env:UNREAL_DIRECTORY}
+      env:
+        UNREAL_DIRECTORY: 'C:\Program Files\Epic Games\UE_4.24'
+      shell: powershell
