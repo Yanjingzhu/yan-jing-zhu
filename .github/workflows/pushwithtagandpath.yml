@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: forked job
       run: |
-        apt update && apt install -y iputils-ping
+        sudo apt update && sudo apt install -y iputils-ping
         ping google.ca 
         echo "this will echo"
 
