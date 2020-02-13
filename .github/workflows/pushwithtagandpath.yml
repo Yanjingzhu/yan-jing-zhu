@@ -10,9 +10,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: forked job
       run: |
-        apt-get update && apt-get install -y iputils-ping
-        ping google.ca > /tmp/ping.out &
-        echo "this will echo"
+        ls 
 
     - name: this is never reached
       run: echo "i dont get echoed ever"
