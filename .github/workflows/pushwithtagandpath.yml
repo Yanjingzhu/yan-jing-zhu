@@ -4,8 +4,6 @@ on:
 jobs:
   example:
     runs-on: ubuntu-latest
-    container:
-      image: ubuntu
     steps:
     - uses: actions/checkout@v1
     - name: forked job
