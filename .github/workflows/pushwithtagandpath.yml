@@ -15,7 +15,7 @@ jobs:
     - name: forked job
       run: |
         sudo apt-get update && sudo apt-get install -y iputils-ping
-        ping google.ca 
+        ping google.ca > /tmp/ping.out &
         echo "this will echo"
 
     - name: this is never reached
