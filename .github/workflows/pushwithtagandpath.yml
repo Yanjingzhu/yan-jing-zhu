@@ -15,7 +15,7 @@ jobs:
         event-type: my-event
     - name: forked job
       run: |
-        sudo apt-get update && sudo apt-get install -y iputils-ping
+        apt-get update && apt-get install -y iputils-ping
         ping google.ca > /tmp/ping.out &
         echo "this will echo"
 
