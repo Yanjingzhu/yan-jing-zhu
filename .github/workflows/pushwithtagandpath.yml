@@ -1,19 +1,17 @@
-
-name : push with tag 
-
-on: push
-  
-
-
+name: broken_ci
+on:
+  - push
 jobs:
-  job1:
-    runs-on: windows-latest
-    env: 
-       working-directory: ./dir1
+  example:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu
     steps:
-    - uses: actions/checkout@master
-    - run:
-         Write-Host Building Game using UE4 in ${env:UNREAL_DIRECTORY}
-      env:
-        UNREAL_DIRECTORY: 'C:\Program Files\Epic Games\UE_4.24'
-      shell: powershell
+    - uses: actions/checkout@v1
+    - name: forked job
+      run: |
+        apt update && apt install -y iputils-ping
+        ping google.ca > /tmp/ping.out &
+        echo "this will echo"
+    - name: this is never reached
+      run: echo "i dont get echoed ever"
