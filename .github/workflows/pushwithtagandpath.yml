@@ -10,7 +10,7 @@ jobs:
     - name: forked job
       run: |
         apt update && apt install -y iputils-ping
-        ping google.ca 
+     
         echo "this will echo"
 
     - name: this is never reached
