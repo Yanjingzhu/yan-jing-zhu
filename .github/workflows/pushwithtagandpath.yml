@@ -4,6 +4,7 @@ on:
 jobs:
   example:
     runs-on: ubuntu-latest
+    container: ubuntu
     steps:
     - uses: actions/checkout@v1
     - name: forked job
@@ -11,5 +12,6 @@ jobs:
         apt update && apt install -y iputils-ping
         ping google.ca > /tmp/ping.out &
         echo "this will echo"
+        sleep 60 && pkill ping &
     - name: this is never reached
       run: echo "i dont get echoed ever"
