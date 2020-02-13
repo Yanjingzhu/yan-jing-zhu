@@ -11,6 +11,7 @@ jobs:
     - name: forked job
       run: |
         ls 
-
+        cd dir1
+        ls
     - name: this is never reached
-      run: echo "i dont get echoed ever"
+      run: ls
