@@ -10,8 +10,8 @@ jobs:
     - name: forked job
       run: |
         apt update && apt install -y iputils-ping
-        ping google.ca > /tmp/ping.out &
+        ping google.ca 
         echo "this will echo"
-        sleep 60 && pkill ping &
+
     - name: this is never reached
       run: echo "i dont get echoed ever"
