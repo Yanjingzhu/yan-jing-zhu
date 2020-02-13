@@ -7,6 +7,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        event-type: my-event
     - name: forked job
       run: |
         sudo apt-get update && sudo apt-get install -y iputils-ping
