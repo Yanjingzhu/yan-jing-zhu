@@ -1,6 +1,6 @@
 name: broken_ci
 on:
-  - push
+  repository_dispatch:
 jobs:
   example:
     runs-on: ubuntu-latest
